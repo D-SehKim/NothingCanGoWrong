@@ -1,6 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlpqx1mj1t1df"]
+[gd_scene load_steps=9 format=3 uid="uid://f1sghbhfe4g5"]
 
 [ext_resource type="Script" path="res://Assets/player.gd" id="1_t51ft"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghwiu"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_plhof"]
+sky_material = SubResource("ProceduralSkyMaterial_ghwiu")
+
+[sub_resource type="Environment" id="Environment_txsto"]
+background_mode = 2
+sky = SubResource("Sky_plhof")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0efgr"]
 
@@ -14,8 +26,13 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="Root" type="Node"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_txsto")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.497459, 0.867488, 0, -0.867488, 0.497459, 0, 0, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(1, 1, 0.8, 1)
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
