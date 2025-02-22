@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://qv0xcm7e4xy8"]
+
+[ext_resource type="Script" path="res://Assets/virus.gd" id="1_qtfpo"]
+
+[node name="virus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtfpo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 871.0
+offset_right = 296.0
+offset_bottom = 911.0
+scale = Vector2(33.2006, 2.99939)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 42.0
+scale = Vector2(47.9921, 2.45148)
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 2.56292
+offset_top = 23.6592
+offset_right = 353.563
+offset_bottom = 254.659
+scale = Vector2(0.0966249, 1.46447)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HAHA!  Your computer is being held for ransom!! (It's your fault for downloading sketchy stuff!).  But don't worry, I'm a nice hacker ;), but to teach you a lesson, I'll only unlock your computer after you enter your birthday!  
+If you forgot, thats kinda on you.  I'm sure you wrote it down somewhere"
+autowrap_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 882.0
+offset_right = 1571.0
+offset_bottom = 978.0
+theme_override_colors/font_placeholder_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+placeholder_text = "DD/MM/YYYY"
+max_length = 35
+expand_to_text_length = true
+flat = true
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

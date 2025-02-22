@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_internet_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/web_search.tscn")
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Assets/virus.tscn")
 
 
-func _on_homework_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/homework.tscn")
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Assets/control_screen.tscn")

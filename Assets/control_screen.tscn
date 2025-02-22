@@ -80,3 +80,4 @@ theme_override_font_sizes/font_size = 30
 text = "Macrohard Wondows 12"
 
 [connection signal="pressed" from="Internet" to="." method="_on_internet_pressed"]
+[connection signal="pressed" from="Homework" to="." method="_on_homework_pressed"]

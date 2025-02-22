@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://brikstdjmff2t"]
+
+[ext_resource type="Script" path="res://Assets/misfire.gd" id="1_nkb8n"]
+
+[node name="misfire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996854, 1)
+script = ExtResource("1_nkb8n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.48, 0.36, 0.36, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 4.00006
+offset_right = 39.0
+offset_bottom = 44.0001
+scale = Vector2(47.9921, 2.45148)
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 7.922
+offset_top = 126.862
+offset_right = 358.922
+offset_bottom = 303.862
+scale = Vector2(0.0690132, 1.40879)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Oops! It seems like you came to a website that doesn't exist!! Not much you can do now!"
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(1.84079, 1.10633)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.811217, 0.753904, 0.75088, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "←"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1809.0
+offset_right = 1817.0
+offset_bottom = 8.0
+scale = Vector2(1.60215, 0.700724)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "X"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

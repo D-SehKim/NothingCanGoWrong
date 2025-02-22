@@ -1,5 +1,5 @@
 extends Control
-
+@onready var text := $LineEdit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_internet_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/web_search.tscn")
-
-
-func _on_homework_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/homework.tscn")
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	if text.text == "01/01/1977":
+		get_tree().change_scene_to_file("res://Assets/control_screen.tscn")
+		#play correct audio
+	else:
+		pass #play "wrong" audio
