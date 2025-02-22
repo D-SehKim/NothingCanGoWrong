@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0hk0k8ejv6pt"]
+
+[ext_resource type="PackedScene" uid="uid://b2xtwla6oemvj" path="res://Assets/FreeBedroomProps/Assets/FBX/Dresser.fbx" id="1_f4p80"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qh10m"]
+points = PackedVector3Array(-0.557158, 0.017907, -0.25, 0.605709, 1.12425, 0.2941, 0.628927, 1.08663, 0.305346, 0.628927, 1.08663, -0.303927, -0.608639, 1.12695, -0.2941, -0.628927, 1.08663, 0.305346, 0.554129, 0.0208861, 0.25, 0.557158, 0.017907, -0.25, -0.554129, 0.0208861, 0.25, 0.321032, 0.273187, 0.293482, -0.628927, 1.08663, -0.303927, 0.608639, 1.12695, -0.2941, -0.605709, 1.12425, 0.2941, -0.314606, 0.279045, 0.287622)
+
+[node name="Dresser" instance=ExtResource("1_f4p80")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dresser" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dresser/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_qh10m")

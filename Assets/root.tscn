@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://f1sghbhfe4g5"]
 
 [ext_resource type="Script" path="res://Assets/player.gd" id="1_t51ft"]
-[ext_resource type="PackedScene" uid="uid://dljm4mfqmeml1" path="res://Assets/prefabs/desk_big.tscn" id="2_dhqnq"]
+[ext_resource type="PackedScene" uid="uid://dljm4mfqmeml1" path="res://Assets/edited_objects/desk_big.tscn" id="2_dhqnq"]
 [ext_resource type="PackedScene" uid="uid://cluisniu5xhu4" path="res://Assets/office_pack/gLTF/monitor.glb" id="3_klfko"]
 [ext_resource type="PackedScene" uid="uid://dc06vgc8kmpkh" path="res://Assets/office_pack/gLTF/wireless_mouse.glb" id="4_ej1j8"]
 [ext_resource type="PackedScene" uid="uid://tv0jbe07w3nb" path="res://Assets/screen.tscn" id="4_nq1vi"]
 [ext_resource type="PackedScene" uid="uid://dqkdmp288e03r" path="res://Assets/office_pack/gLTF/keyboard_slim.glb" id="5_rtkn6"]
 [ext_resource type="PackedScene" uid="uid://cxakmc2b8wjeg" path="res://Assets/office_pack/gLTF/mug.glb" id="6_l7r4w"]
 [ext_resource type="PackedScene" uid="uid://bbky8yrky5ya2" path="res://Assets/office_pack/gLTF/mini_pc.glb" id="7_5ebjn"]
-[ext_resource type="PackedScene" uid="uid://doeklyagj81jo" path="res://Assets/prefabs/office_chair.tscn" id="8_ybydk"]
+[ext_resource type="PackedScene" uid="uid://doeklyagj81jo" path="res://Assets/edited_objects/office_chair.tscn" id="8_ybydk"]
 [ext_resource type="Script" path="res://Assets/office_chair.gd" id="9_41aud"]
 [ext_resource type="PackedScene" uid="uid://num50r50t6p2" path="res://Assets/office_pack/gLTF/lamp.glb" id="9_y3cka"]
 
