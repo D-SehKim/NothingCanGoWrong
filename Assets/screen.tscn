@@ -1,13 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://tv0jbe07w3nb"]
+[gd_scene load_steps=8 format=3 uid="uid://tv0jbe07w3nb"]
 
 [ext_resource type="PackedScene" uid="uid://3ewuyvsq60fu" path="res://Assets/control_screen.tscn" id="1_grdvw"]
 
+[sub_resource type="Environment" id="Environment_ybwdw"]
+background_color = Color(0.46, 0.46, 0.46, 1)
+glow_hdr_threshold = 0.0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_3wefy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pwxr0"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of5ky"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_3wefy")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_pwxr0")
+backlight = Color(1, 1, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_t8ml8"]
 
@@ -17,8 +27,12 @@ size = Vector3(1, 1, 0.10144)
 [node name="Screen" type="Node3D"]
 transform = Transform3D(1.65705, 0, 0, 0, 0.999653, 0, 0, 0, 0.999653, 0.00300372, 0, -0.0361017)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ybwdw")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_of5ky")
+gi_mode = 0
 mesh = SubResource("QuadMesh_t8ml8")
 
 [node name="Area3D" type="Area3D" parent="."]

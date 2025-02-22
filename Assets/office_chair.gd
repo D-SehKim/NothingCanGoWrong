@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var label = $"../../CanvasLayer/SitdownLabel"
-@onready var chair_camera = $ChairCamera
+@onready var chair_camera = $Camera3D
 @onready var main_camera = $"../../Player/Camera"
 
 
