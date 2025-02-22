@@ -1,12 +1,17 @@
-[gd_scene format=3 uid="uid://3ewuyvsq60fu"]
+[gd_scene load_steps=4 format=3 uid="uid://3ewuyvsq60fu"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" path="res://Assets/control_screen.gd" id="1_xwl7r"]
+[ext_resource type="Texture2D" uid="uid://b15hqascydjeu" path="res://Assets/computer_icons/Google_Chrome_icon_(February_2022).svg.png" id="2_02tp2"]
+[ext_resource type="Texture2D" uid="uid://cosultabwqlka" path="res://Assets/computer_icons/Generic_Folder.png" id="3_22cnd"]
+
+[node name="home_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xwl7r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,27 +22,39 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.290196, 0.290196, 1, 1)
 
-[node name="RecycleBin" type="Button" parent="."]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 33.0
-offset_right = 43.0
-offset_bottom = 41.0
-scale = Vector2(22.0349, 21.536)
+[node name="Gaggle_label" type="Label" parent="ColorRect"]
+offset_left = 24.0
+offset_top = 223.0
+offset_right = 392.0
+offset_bottom = 292.0
+scale = Vector2(0.625042, 0.666645)
+theme_override_font_sizes/font_size = 50
+text = "Gaagle Chrame"
+
+[node name="homework_labe" type="Label" parent="ColorRect"]
+offset_left = 915.0
+offset_top = 484.0
+offset_right = 1283.0
+offset_bottom = 553.0
+scale = Vector2(0.625042, 0.666645)
+theme_override_font_sizes/font_size = 50
+text = "Homework"
 
 [node name="Internet" type="Button" parent="."]
-offset_left = 37.0
-offset_top = 234.0
-offset_right = 45.0
-offset_bottom = 242.0
-scale = Vector2(22.0349, 21.536)
+offset_left = 40.0
+offset_top = 25.0
+offset_right = 2096.0
+offset_bottom = 2081.0
+scale = Vector2(0.0894444, 0.0865126)
+icon = ExtResource("2_02tp2")
 
 [node name="Homework" type="Button" parent="."]
-offset_left = 933.0
-offset_top = 353.0
-offset_right = 941.0
-offset_bottom = 361.0
-scale = Vector2(22.0349, 21.536)
+offset_left = 909.0
+offset_top = 305.0
+offset_right = 1429.0
+offset_bottom = 825.0
+scale = Vector2(0.341867, 0.337569)
+icon = ExtResource("3_22cnd")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
@@ -46,3 +63,16 @@ offset_top = 982.0
 offset_right = 42.0
 offset_bottom = 1022.0
 scale = Vector2(47.9921, 2.45148)
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 8.52224
+offset_top = -2.85543
+offset_right = 359.522
+offset_bottom = 39.1446
+scale = Vector2(0.0656786, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Macrohard Wondows 12"
+
+[connection signal="pressed" from="Internet" to="." method="_on_internet_pressed"]

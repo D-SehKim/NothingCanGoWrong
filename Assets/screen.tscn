@@ -15,7 +15,7 @@ albedo_texture = SubResource("ViewportTexture_3wefy")
 size = Vector3(1, 1, 0.10144)
 
 [node name="Screen" type="Node3D"]
-transform = Transform3D(1.6127, 0, 0, 0, 1, 0, 0, 0, 1, 0.00300372, 0, -0.0361017)
+transform = Transform3D(1.65705, 0, 0, 0, 0.999653, 0, 0, 0, 0.999653, 0.00300372, 0, -0.0361017)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_of5ky")
