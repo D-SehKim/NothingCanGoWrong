@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://tv0jbe07w3nb"]
+
+[ext_resource type="PackedScene" uid="uid://3ewuyvsq60fu" path="res://Assets/control_screen.tscn" id="1_grdvw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3wefy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of5ky"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3wefy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t8ml8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrnrw"]
+size = Vector3(1, 1, 0.10144)
+
+[node name="Screen" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00300372, 0, 0.000175953)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_of5ky")
+mesh = SubResource("QuadMesh_t8ml8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0437385)
+shape = SubResource("BoxShape3D_wrnrw")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Control" parent="SubViewport" instance=ExtResource("1_grdvw")]
