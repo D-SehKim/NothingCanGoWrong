@@ -4,7 +4,7 @@ extends CharacterBody3D
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
-@onready var camera := $Camera3D
+@onready var camera := $Camera
 @onready var body := $"."
 const TURN_SPEED_FACTOR = 0.001
 
