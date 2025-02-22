@@ -23,6 +23,7 @@ grow_vertical = 2
 color = Color(0.290196, 0.290196, 1, 1)
 
 [node name="Gaggle_label" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 223.0
 offset_right = 392.0
@@ -32,6 +33,7 @@ theme_override_font_sizes/font_size = 50
 text = "Gaagle Chrame"
 
 [node name="homework_labe" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 915.0
 offset_top = 484.0
 offset_right = 1283.0
@@ -41,6 +43,7 @@ theme_override_font_sizes/font_size = 50
 text = "Homework"
 
 [node name="Internet" type="Button" parent="."]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 25.0
 offset_right = 2096.0
@@ -49,6 +52,7 @@ scale = Vector2(0.0894444, 0.0865126)
 icon = ExtResource("2_02tp2")
 
 [node name="Homework" type="Button" parent="."]
+layout_mode = 0
 offset_left = 909.0
 offset_top = 305.0
 offset_right = 1429.0
