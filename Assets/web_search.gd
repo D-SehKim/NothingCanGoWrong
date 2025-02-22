@@ -24,7 +24,7 @@ func _on_search_pressed() -> void:
 		get_tree().change_scene_to_file("res://Assets/misfire.tscn")
 
 
-func _on_line_edit_text_submitted(new_text: String) -> void:
+func _on_line_edit_text_submitted(_new_text: String) -> void:
 	if text.text == "www.download.com/greatestgame":
 		get_tree().change_scene_to_file("res://Assets/download.tscn")
 	elif text.text == "www.amazin.com/greatestgame":
