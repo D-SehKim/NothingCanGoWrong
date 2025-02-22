@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfeljrq4v4ytc"]
+[gd_scene load_steps=21 format=3 uid="uid://cfeljrq4v4ytc"]
 
 [ext_resource type="PackedScene" uid="uid://s4h3a8wv5aah" path="res://Assets/FreeBedroomProps/Assets/FBX/FloorTile.fbx" id="1_60hsn"]
 [ext_resource type="PackedScene" uid="uid://coujppj0fwoej" path="res://Assets/FreeBedroomProps/Assets/FBX/RightCornerWall.fbx" id="2_mwp0j"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bbky8yrky5ya2" path="res://Assets/office_pack/gLTF/mini_pc.glb" id="14_wys6r"]
 [ext_resource type="PackedScene" uid="uid://cxakmc2b8wjeg" path="res://Assets/office_pack/gLTF/mug.glb" id="15_gwe8g"]
 [ext_resource type="PackedScene" uid="uid://bdlqcvupjw7ok" path="res://Assets/edited_objects/bed.tscn" id="15_m0twh"]
+[ext_resource type="Script" path="res://Assets/player.gd" id="16_2wodl"]
 
 [sub_resource type="Environment" id="Environment_w4jt2"]
 background_energy_multiplier = 0.0
@@ -24,8 +25,11 @@ reflected_light_source = 1
 [sub_resource type="BoxMesh" id="BoxMesh_yp147"]
 flip_faces = true
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m7wx1"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pbqar"]
+data = PackedVector3Array(0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l1icc"]
+radius = 0.25
 
 [node name="Room" type="Node3D"]
 
@@ -39,8 +43,8 @@ mesh = SubResource("BoxMesh_yp147")
 [node name="StaticBody3D" type="StaticBody3D" parent="RoomMesh"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomMesh/StaticBody3D"]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, -0.0894693, 0)
-shape = SubResource("ConcavePolygonShape3D_m7wx1")
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, -0.06, 0)
+shape = SubResource("ConcavePolygonShape3D_pbqar")
 
 [node name="RoomParent" type="Node3D" parent="."]
 
@@ -110,52 +114,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0.978657, -2.5, 2.9979)
 [node name="LeftCornerWall" parent="RoomParent" instance=ExtResource("4_e1b25")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.01541, -2.5, 2.99565)
 
-[node name="desk_big" parent="." instance=ExtResource("5_u8jo5")]
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="desk_big" parent="Objects" instance=ExtResource("5_u8jo5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93885, -2.5, -0.733)
 
-[node name="Dresser2" parent="." instance=ExtResource("6_glaml")]
+[node name="Dresser2" parent="Objects" instance=ExtResource("6_glaml")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0562372, -2.5, 2.25351)
 
-[node name="Rug" parent="." instance=ExtResource("8_sypnj")]
+[node name="Rug" parent="Objects" instance=ExtResource("8_sypnj")]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.85, -1.27912, -2.5, -0.728458)
 
-[node name="office_chair" parent="." instance=ExtResource("9_w5isg")]
+[node name="office_chair" parent="Objects" instance=ExtResource("9_w5isg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11186, -2.481, -0.733)
 
-[node name="monitor" parent="." instance=ExtResource("10_exxvt")]
+[node name="monitor" parent="Objects" instance=ExtResource("10_exxvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06552, -1.548, -0.733)
 
-[node name="keyboard_slim" parent="." instance=ExtResource("11_eatp1")]
+[node name="keyboard_slim" parent="Objects" instance=ExtResource("11_eatp1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62791, -1.548, -0.733)
 
-[node name="wireless_mouse" parent="." instance=ExtResource("12_grdn3")]
+[node name="wireless_mouse" parent="Objects" instance=ExtResource("12_grdn3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.628, -1.548, -1.1251)
 
-[node name="lamp" parent="." instance=ExtResource("13_avae6")]
+[node name="lamp" parent="Objects" instance=ExtResource("13_avae6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246923, -1.36054, 2.27108)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="lamp"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Objects/lamp"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00491476, 0.430853, -0.00265813)
 light_color = Color(1, 0.969667, 0.86, 1)
 light_energy = 0.13
 shadow_enabled = true
 omni_range = 32.912
 
-[node name="lamp2" parent="." instance=ExtResource("13_avae6")]
+[node name="lamp2" parent="Objects" instance=ExtResource("13_avae6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16836, -1.54789, 0.459154)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="lamp2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Objects/lamp2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00491476, 0.430853, -0.00265813)
 light_color = Color(1, 0.969667, 0.86, 1)
 light_energy = 0.13
 shadow_enabled = true
 omni_range = 32.912
 
-[node name="mini_pc" parent="." instance=ExtResource("14_wys6r")]
+[node name="mini_pc" parent="Objects" instance=ExtResource("14_wys6r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03378, -1.5484, -0.335868)
 
-[node name="mug" parent="." instance=ExtResource("15_gwe8g")]
+[node name="mug" parent="Objects" instance=ExtResource("15_gwe8g")]
 transform = Transform3D(0.752794, 0, -0.658256, 0, 1, 0, 0.658256, 0, 0.752794, -1.92243, -1.54541, -1.27075)
 
-[node name="Bed" parent="." instance=ExtResource("15_m0twh")]
+[node name="Bed" parent="Objects" instance=ExtResource("15_m0twh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25151, -2.5, -1.44442)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.687891, 0.685113)
+script = ExtResource("16_2wodl")
+
+[node name="PlayerCollider" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CylinderShape3D_l1icc")
+
+[node name="Camera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
