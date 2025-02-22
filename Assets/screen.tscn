@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://tv0jbe07w3nb"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://tv0jbe07w3nb"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=12 format=3 uid="uid://tv0jbe07w3nb"]
 >>>>>>> Stashed changes
@@ -12,10 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://brikstdjmff2t" path="res://Assets/misfire.tscn" id="4_sdnb0"]
 [ext_resource type="PackedScene" uid="uid://qv0xcm7e4xy8" path="res://Assets/virus.tscn" id="6_hvv70"]
 [ext_resource type="PackedScene" uid="uid://bhsdoovfsfhul" path="res://Assets/web_search.tscn" id="7_pw2q2"]
+<<<<<<< Updated upstream
 
 [sub_resource type="Environment" id="Environment_ybwdw"]
 background_color = Color(0.46, 0.46, 0.46, 1)
 glow_hdr_threshold = 0.0
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3wefy"]
 viewport_path = NodePath("SubViewport")
@@ -35,9 +42,12 @@ backlight = Color(1, 1, 1, 1)
 [node name="Screen" type="Node3D"]
 transform = Transform3D(1.65705, 0, 0, 0, 0.999653, 0, 0, 0, 0.999653, 0.00300372, 0, -0.0361017)
 script = ExtResource("1_yv8cg")
+<<<<<<< Updated upstream
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ybwdw")
+=======
+>>>>>>> Stashed changes
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_of5ky")
