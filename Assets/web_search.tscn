@@ -87,5 +87,7 @@ theme_override_font_sizes/font_size = 64
 text = "Search!"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="LineEdit" to="." method="_on_line_edit_focus_entered"]
+[connection signal="focus_exited" from="LineEdit" to="." method="_on_line_edit_focus_exited"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Search" to="." method="_on_search_pressed"]

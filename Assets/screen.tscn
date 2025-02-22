@@ -1,6 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://tv0jbe07w3nb"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://tv0jbe07w3nb"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://3ewuyvsq60fu" path="res://Assets/control_screen.tscn" id="1_grdvw"]
+[ext_resource type="Script" path="res://Assets/screen.gd" id="1_yv8cg"]
+[ext_resource type="PackedScene" uid="uid://bviwpyipls026" path="res://Assets/homework.tscn" id="2_rbhhw"]
+[ext_resource type="PackedScene" uid="uid://cewetblbyyuuj" path="res://Assets/amazin.tscn" id="2_ywiiw"]
+[ext_resource type="PackedScene" uid="uid://ckf6w0wh48dnu" path="res://Assets/download.tscn" id="3_krcks"]
+[ext_resource type="PackedScene" uid="uid://brikstdjmff2t" path="res://Assets/misfire.tscn" id="4_sdnb0"]
+[ext_resource type="PackedScene" uid="uid://qv0xcm7e4xy8" path="res://Assets/virus.tscn" id="6_hvv70"]
+[ext_resource type="PackedScene" uid="uid://bhsdoovfsfhul" path="res://Assets/web_search.tscn" id="7_pw2q2"]
 
 [sub_resource type="Environment" id="Environment_ybwdw"]
 background_color = Color(0.46, 0.46, 0.46, 1)
@@ -21,11 +32,9 @@ backlight = Color(1, 1, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_t8ml8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wrnrw"]
-size = Vector3(1, 1, 0.10144)
-
 [node name="Screen" type="Node3D"]
 transform = Transform3D(1.65705, 0, 0, 0, 0.999653, 0, 0, 0, 0.999653, 0.00300372, 0, -0.0361017)
+script = ExtResource("1_yv8cg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ybwdw")
@@ -35,13 +44,24 @@ material_override = SubResource("StandardMaterial3D_of5ky")
 gi_mode = 0
 mesh = SubResource("QuadMesh_t8ml8")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0437385)
-shape = SubResource("BoxShape3D_wrnrw")
-
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1920, 1080)
 
-[node name="Control" parent="SubViewport" instance=ExtResource("1_grdvw")]
+[node name="homework" parent="SubViewport" instance=ExtResource("2_rbhhw")]
+
+[node name="amazin" parent="SubViewport" instance=ExtResource("2_ywiiw")]
+visible = false
+
+[node name="download" parent="SubViewport" instance=ExtResource("3_krcks")]
+visible = false
+
+[node name="misfire" parent="SubViewport" instance=ExtResource("4_sdnb0")]
+visible = false
+
+[node name="home" parent="SubViewport" instance=ExtResource("1_grdvw")]
+
+[node name="virus" parent="SubViewport" instance=ExtResource("6_hvv70")]
+visible = false
+
+[node name="web_search" parent="SubViewport" instance=ExtResource("7_pw2q2")]
+visible = false

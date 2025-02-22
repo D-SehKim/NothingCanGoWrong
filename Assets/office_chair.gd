@@ -26,10 +26,12 @@ func _process(delta: float) -> void:
 	
 func switch_to_chair_camera() -> void:
 	main_camera.current = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	chair_camera.current = true
 
 func switch_to_main_camera() -> void:
 	chair_camera.current = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	main_camera.current = true
 
 

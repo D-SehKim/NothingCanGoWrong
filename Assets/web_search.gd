@@ -13,21 +13,33 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/control_screen.tscn")
+	SignalBus.x_pressed.emit()
 
 func _on_search_pressed() -> void:
 	if text.text == "www.download.com/greatestgame":
-		get_tree().change_scene_to_file("res://Assets/download.tscn")
+		SignalBus.go_to_download.emit()
 	elif text.text == "www.amazin.com/greatestgame":
-		get_tree().change_scene_to_file("res://Assets/amazin.tscn")
+		SignalBus.go_to_amazon.emit()
 	else:
-		get_tree().change_scene_to_file("res://Assets/misfire.tscn")
+		SignalBus.go_to_miss.emit()
 
 
 func _on_line_edit_text_submitted(_new_text: String) -> void:
 	if text.text == "www.download.com/greatestgame":
-		get_tree().change_scene_to_file("res://Assets/download.tscn")
+		SignalBus.go_to_download.emit()
 	elif text.text == "www.amazin.com/greatestgame":
-		get_tree().change_scene_to_file("res://Assets/amazin.tscn")
+		SignalBus.go_to_amazon.emit()
 	else:
-		get_tree().change_scene_to_file("res://Assets/misfire.tscn")
+		SignalBus.go_to_miss.emit()
+
+
+func _on_line_edit_focus_entered() -> void:
+	var event = InputEventKey.new()
+	event.set_keycode(KEY_E)
+	InputMap.action_erase_event("interaction", event)
+
+
+func _on_line_edit_focus_exited() -> void:
+	var event = InputEventKey.new()
+	event.set_keycode(KEY_E)
+	InputMap.action_add_event("interaction", event)

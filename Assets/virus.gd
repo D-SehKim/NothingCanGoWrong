@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if text.text == "01/01/1977":
-		get_tree().change_scene_to_file("res://Assets/control_screen.tscn")
+		SignalBus.x_pressed.emit()
 		#play correct audio
 	else:
 		pass #play "wrong" audio
