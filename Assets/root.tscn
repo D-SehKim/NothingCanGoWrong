@@ -124,17 +124,16 @@ omni_range = 20.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SitdownLabel" type="Label" parent="CanvasLayer"]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -487.0
-offset_top = 94.0
-offset_right = 539.0
-offset_bottom = 231.0
+offset_left = -228.0
+offset_top = 124.0
+offset_right = 237.0
+offset_bottom = 228.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "Press \"E\" To Sit Down"
+theme_override_font_sizes/font_size = 43
+text = "Press [E] To Sit Down"
 horizontal_alignment = 1
 vertical_alignment = 1
 
