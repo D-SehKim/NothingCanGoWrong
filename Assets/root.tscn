@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://f1sghbhfe4g5"]
+[gd_scene load_steps=20 format=3 uid="uid://f1sghbhfe4g5"]
 
 [ext_resource type="Script" path="res://Assets/player.gd" id="1_t51ft"]
 [ext_resource type="PackedScene" uid="uid://dljm4mfqmeml1" path="res://Assets/prefabs/desk_big.tscn" id="2_dhqnq"]
 [ext_resource type="PackedScene" uid="uid://cluisniu5xhu4" path="res://Assets/office_pack/gLTF/monitor.glb" id="3_klfko"]
 [ext_resource type="PackedScene" uid="uid://dc06vgc8kmpkh" path="res://Assets/office_pack/gLTF/wireless_mouse.glb" id="4_ej1j8"]
+[ext_resource type="PackedScene" uid="uid://tv0jbe07w3nb" path="res://Assets/screen.tscn" id="4_nq1vi"]
 [ext_resource type="PackedScene" uid="uid://dqkdmp288e03r" path="res://Assets/office_pack/gLTF/keyboard_slim.glb" id="5_rtkn6"]
 [ext_resource type="PackedScene" uid="uid://cxakmc2b8wjeg" path="res://Assets/office_pack/gLTF/mug.glb" id="6_l7r4w"]
 [ext_resource type="PackedScene" uid="uid://bbky8yrky5ya2" path="res://Assets/office_pack/gLTF/mini_pc.glb" id="7_5ebjn"]
@@ -64,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011, 0.75, -0.004)
 [node name="Level" type="Node3D" parent="."]
 
 [node name="RoomMesh" type="MeshInstance3D" parent="Level"]
-transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 10, 0, 2.5, 0)
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 10, -0.00520015, 2.49192, 0.00620461)
 mesh = SubResource("BoxMesh_r8oam")
 skeleton = NodePath("../../Player")
 
@@ -78,6 +79,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.325, 0, 2.5)
 
 [node name="monitor" parent="Level" instance=ExtResource("3_klfko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.575, 0.954, 2.5)
+
+[node name="Screen" parent="Level/monitor" instance=ExtResource("4_nq1vi")]
+transform = Transform3D(-4.2706e-08, 0, 0.53, 0, 0.56, 0, -0.977, 0, -2.3167e-08, 0.01, 0.455, 0.002)
 
 [node name="wireless_mouse" parent="Level" instance=ExtResource("4_ej1j8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.125, 0.958, 2.1)
@@ -102,7 +106,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192871, 0.4104, -0.0960693)
 shape = SubResource("BoxShape3D_2q74i")
 
 [node name="ChairCamera" type="Camera3D" parent="Level/office_chair"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.4, 1.215, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.3, 1.435, 0)
+fov = 44.6
 
 [node name="lamp" parent="Level" instance=ExtResource("9_y3cka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24408, 0.951598, 3.34175)
