@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckf6w0wh48dnu"]
+
+[ext_resource type="Script" path="res://Assets/download.gd" id="1_br4hf"]
+
+[node name="web_search" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_br4hf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.579627, 0.857446, 0.48911, 1)
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 21.0
+offset_top = 4.0
+offset_right = 528.0
+offset_bottom = 46.0
+scale = Vector2(2.19055, 2.2941)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "www.download.com/greatestgame"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 42.0
+scale = Vector2(47.9921, 2.45148)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 435.0
+offset_right = 921.0
+offset_bottom = 531.0
+scale = Vector2(2.09231, 2.52572)
+theme_override_font_sizes/font_size = 64
+text = "DOWNLOAD NOW!!"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1809.0
+offset_right = 1817.0
+offset_bottom = 8.0
+scale = Vector2(1.60215, 0.700724)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

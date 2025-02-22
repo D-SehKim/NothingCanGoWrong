@@ -20,6 +20,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.77, 0.77, 0.77, 1)
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 455.0
+offset_right = 296.0
+offset_bottom = 495.0
+scale = Vector2(33.2006, 2.99939)
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 2.0
@@ -30,10 +38,10 @@ scale = Vector2(47.9921, 2.45148)
 
 [node name="Label" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 8.68894
-offset_top = -2.85541
-offset_right = 359.689
-offset_bottom = 39.1446
+offset_left = 9.10567
+offset_top = 135.02
+offset_right = 360.106
+offset_bottom = 177.02
 scale = Vector2(0.0656786, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -54,4 +62,30 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "X"
 
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 466.0
+offset_right = 1571.0
+offset_bottom = 562.0
+theme_override_colors/font_placeholder_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Search Gaagle..."
+max_length = 35
+expand_to_text_length = true
+flat = true
+
+[node name="Search" type="Button" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 614.0
+offset_right = 977.0
+offset_bottom = 710.0
+scale = Vector2(1.4406, 1.23767)
+theme_override_font_sizes/font_size = 64
+text = "Search!"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Search" to="." method="_on_search_pressed"]
