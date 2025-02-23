@@ -9,3 +9,4 @@ signal download_pressed
 signal go_to_download
 signal go_to_amazon
 signal go_to_miss
+signal sitting_down

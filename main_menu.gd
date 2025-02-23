@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_home_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/root.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Assets/scenes/room.tscn") # Replace with function body.
 
 
 func _on_exist_pressed() -> void:
